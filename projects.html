@@ -1,0 +1,84 @@
+<head><link href="style.css" rel="stylesheet" /></head>
+<header>
+    <h1>Sarah Malik</h1>
+    <p>Misneach Intern</p>
+</header>
+<nav><ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="about.html">About Me</a></li>
+    <li><a href="experiences.html">Experiences</a></li>
+    <li><a href="education.html">Education</a></li>
+    <li><a href="projects.html">Projects</a></li>
+    <li><a href="contact.html">Contact</a></li>
+</ul></nav>
+<main>
+    <section>
+        <h2>Calculator</h2>
+        <input type="text" id="first-number">
+        <button onclick="addition()"> + </button>
+        <button onclick="subtraction()"> - </button>
+        <button onclick="multiplication()"> * </button>
+        <button onclick="division()"> / </button>
+        <button onclick="power()"> ^ </button>
+        <button onclick="clear()"> C </button>
+        <input type="text" id="second-number">
+        <p id="result"></p>
+        <script>
+            function addition() {
+                var num1 = parseFloat(document.getElementById("first-number").value);
+                var num2 = parseFloat(document.getElementById("second-number").value);
+                var sum = num1 + num2;
+                document.getElementById("result").innerText = "Result: " + sum;
+                colorResult(sum);
+            }
+            function colorResult(resultValue) {
+                var resultElement = document.getElementById("result");
+                if (resultValue < 0) {
+                    resultElement.style.color = "red";
+                } else {
+                    resultElement.style.color = "black";
+                }
+            }
+            function subtraction() {
+                var num1 = parseFloat(document.getElementById("first-number").value);
+                var num2 = parseFloat(document.getElementById("second-number").value);
+                var difference = num1 - num2;
+                document.getElementById("result").innerText = "Result: " + difference;
+                colorResult(difference);
+            }
+
+            function multiplication() {
+                var num1 = parseFloat(document.getElementById("first-number").value);
+                var num2 = parseFloat(document.getElementById("second-number").value);
+                var product = num1 * num2;
+                document.getElementById("result").innerText = "Result: " + product;
+                colorResult(product);
+            }
+            function division() {
+                var num1 = parseFloat(document.getElementById("first-number").value);
+                var num2 = parseFloat(document.getElementById("second-number").value);
+                var quotient = num1 / num2;
+                document.getElementById("result").innerText = "Result: " + quotient;
+                colorResult(quotient);
+            }
+            function power() {
+                var num1 = parseFloat(document.getElementById("first-number").value);
+                var num2 = parseFloat(document.getElementById("second-number").value);
+                var result = 1;
+                for (var i = 0; i < num2; i++) {
+                    result *= num1;
+                }
+                document.getElementById("result").innerText = "Result: " + result;
+                colorResult(result);
+            }
+            function clear() {
+                document.getElementById("first-number").value = "";
+                document.getElementById("second-number").value = "";
+                document.getElementById("result").innerText = "";
+            }
+        </script>
+    </section>
+</main>
+<footer>
+    <p>&copy; 2024 Sarah Malik</p>
+</footer>
